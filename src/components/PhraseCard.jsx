@@ -1,3 +1,4 @@
+import './styles/PhraseCard.css'
 
 const PhraseCard = ( {phraseR, authorR} ) => {
 
@@ -6,8 +7,8 @@ const PhraseCard = ( {phraseR, authorR} ) => {
 
   return (
     <div>
-      <p> { phrase } </p>
-      <p> { author } </p>
+      <p className="card_phrase"> { phrase } </p>
+      <q className="card_cite"> { author } </q>
     </div>
   )
 }

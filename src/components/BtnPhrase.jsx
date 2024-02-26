@@ -1,6 +1,7 @@
 import getRandom from "../utils/getRandom"
 import phrases from '../utils/phrases.json'
 import arrImages from '../utils/arrImages.json'
+import './styles/BtnPhrase.css'
 
 const BtnPhrase = ( {setPhraseRandom, setimageSelected} ) => {
 
@@ -13,7 +14,7 @@ const BtnPhrase = ( {setPhraseRandom, setimageSelected} ) => {
   }
 
   return (
-    <button onClick={handleClick}>Probar mi suerte</button>
+    <button className="card_btn" onClick={handleClick}>Probar mi suerte</button>
   )
 }
 

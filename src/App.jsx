@@ -20,10 +20,13 @@ function App() {
   }
 
   return (
-    <div style={objStyle}>
-      <h1>Galleta de la fortuna</h1>
+    <div className='app' style={objStyle}>
+      <h1 className='app_title' >Galleta de la fortuna</h1>
+      <article className='app_card'>
       <PhraseCard phraseR={phraseRandom} authorR={phraseRandom} />
       <BtnPhrase setPhraseRandom={setPhraseRandom} setimageSelected={setimageSelected}/>
+      </article>
+      
     </div>
   )
 }
