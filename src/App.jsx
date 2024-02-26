@@ -1,35 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import phrases from './utils/phrases.json'
+import authors from './utils/phrases.json'
+import getRandom from './utils/getRandom'
+import PhraseCard from './components/PhraseCard'
+import BtnPhrase from './components/BtnPhrase'
+import arrImages from './utils/arrImages.json'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const initialValue = getRandom(phrases, authors)
+  const [phraseRandom, setPhraseRandom] = useState(initialValue)
+
+  const initialImage = getRandom(arrImages)
+  const [imageSelected, setimageSelected] = useState(initialImage)
+
+  const objStyle = {
+    backgroundImage: `url('/fondo${imageSelected}.png')`
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={objStyle}>
+      <h1>Galleta de la fortuna</h1>
+      <PhraseCard phraseR={phraseRandom} authorR={phraseRandom} />
+      <BtnPhrase setPhraseRandom={setPhraseRandom} setimageSelected={setimageSelected}/>
+    </div>
   )
 }
+
+
 
 export default App
